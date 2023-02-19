@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'cat sankalp.cpp'
+        sh 'cat error.cpp'
         echo 'Test Stage successful'
       }
     }
