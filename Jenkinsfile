@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean install'
+        sh 'gcc hello.cpp -o hello.exe'
         echo 'Build Stage successful'
         }
     }
     stage('Test') {
       steps {
-        sh 'mvn test'
+        sh 'hello.exe'
         echo 'Test Stage successful'
         post {
           always {
@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'mvn deploy'
+        sh ''
         echo 'Deployment successful'
        }
     }
