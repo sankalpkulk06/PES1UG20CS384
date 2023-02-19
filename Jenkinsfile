@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'g++ sankalp.cpp -o sankalp'
-        build job: 'PES1UG20CS384-1', wait: false
+        build job: 'PES1UG20CS384', wait: false
         echo 'Build Stage successful'
         }
     }
