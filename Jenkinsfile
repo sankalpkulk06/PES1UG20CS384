@@ -3,24 +3,19 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'gcc hello.cpp -o hello.exe'
+        sh 'g++ sankalp.cpp -o sankalp'
+        build job: 'PES1UG20CS384-1', wait: false
         echo 'Build Stage successful'
         }
     }
     stage('Test') {
       steps {
-        sh 'hello.exe'
+        sh 'cat sankalp.cpp'
         echo 'Test Stage successful'
-        post {
-          always {
-            junit 'target/surefire-reports/*.xml'
-          }
-        }
       }
     }
     stage('Deploy') {
       steps {
-        sh ''
         echo 'Deployment successful'
        }
     }
